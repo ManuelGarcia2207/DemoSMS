@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+    <base target="_top">
+  </head>
+  <body>
+    
+    <table width="100%" class="barMai">
+    <tr>
+    
+    <td width="70%">
+    </td>
+    
+    <td width="30%" id="names" align="center">
+    </td>
+    
+    </tr>
+    </table>
+  
+  
+    <div id="output">
+    
+    <h1 class="loginM suave">Login</h1>
+    
+    <div class="fondoM">
+
+    <div class="iyr">
+    <form onSubmit="handleFormSubmit(this)">
+    <h2 style="margin-top:2%;">Please Sign In</h2><br><br>
+    <h4 class="login suave">Use a local account to log in.</h4><br><br>
+    <h3 class="suave">Email</h3>
+    <input type="text" name="user" class="is" required/><br><br>
+    <h3 class="suave">Password</h3>
+    <input type="password" class="is" name="pass" id="pass" required/><br><br>
+    <input type="checkbox" name="recordar"/><label for="recordar" style="margin-left:2%;">Remember me?</label><br><br>
+    <center><input type="submit" class="btn" value="Log in"/></center>
+    <input type="hidden" name="type" id="type" value="entra"/>
+    </form>
+    </div>
+
+    </div>
+    
+    </div>
+    
+  </body>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyANzWmhtiJgbOVNTr3TDSUGHGKBw77-vNI"></script>
+  <?!= HtmlService.createHtmlOutputFromFile('CSS').getContent(); ?>
+  <?!= HtmlService.createHtmlOutputFromFile('JS').getContent(); ?>
+</html>
