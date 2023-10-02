@@ -1,0 +1,384 @@
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+.btn{
+  padding:10px;
+  border-radius:5px;
+  background-color: #5cb85c;
+  color:#fff;
+  border:1px solid #4cae4c;
+  width: 80%;
+  font-size: 18px;
+  margin: auto;
+}
+
+.btn:hover, .btn2:hover{
+  background-color: #fff;
+  color: #5cb85c;
+  cursor:pointer;
+}
+
+.btn2{
+  padding:10px;
+  border-radius:5px;
+  background-color: #5cb85c;
+  color:#fff;
+  border:1px solid #4cae4c;
+  width: 50%;
+  font-size: 18px;
+  margin: auto;
+}
+
+.fondoM{
+  padding: 3% 0% 5% 0%;
+}
+
+.iyr{
+    padding: 0px 20px 20px 20px;
+    width: 50%;
+    border: 1px #ddd solid;
+    border-radius: 20px;
+    margin-left: 5%;
+    }
+
+.is{
+  padding:4px;
+  background-color: #fff;
+  padding-left: 2%;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 60%;
+  height: 35px;
+}
+
+.is::placeholder{
+color: #00965f;
+font-weight: bold;
+width: 50%;
+}
+
+.cur:hover{
+  cursor: pointer;
+}
+
+.cur2:hover{
+  cursor: default;
+}
+
+.login{
+  border-bottom-style: solid;
+  border-bottom-color: #ddd;
+  border-bottom-width: 1px;
+  padding-bottom: 3%;
+}
+
+.loginM{
+  border-bottom-style: solid;
+  border-bottom-color: #ddd;
+  border-bottom-width: 1px;
+  width: 95%;
+  margin: 3% 0% 0% 2%;
+  padding-bottom: 1%;
+}
+
+.panel-title{
+  background-color: #f5f5f5;
+  width: 100%;
+  border: 2px #ddd solid;
+}
+
+.suave{
+  font-weight: lighter;
+}
+
+.box-amarillo{
+  color: #fff;
+  background-color: #f0ad4e;
+}
+
+.subY{
+ padding: 8% 2% 8% 8%;
+ color: #f0ad4e;
+}
+
+.box-azul{
+  color: #fff;
+  background-color: #337ab7;
+}
+
+.subB{
+ padding: 8% 0% 8% 8%;
+ color: #337ab7;
+}
+
+.box-rojo{
+  color: #fff;
+  background-color: #d9534f;
+}
+
+.subR{
+ padding: 8% 0% 8% 8%;
+ color: #d9534f;
+}
+
+.box-verde{
+  color: #fff;
+  background-color: #5cb85c;
+}
+
+.subG{
+ padding: 8% 0% 8% 8%;
+ color: #5cb85c;
+}
+
+.box-azul, .box-verde, .box-amarillo, .box-rojo{
+  padding: 0% 4% 4% 4%;
+}
+
+.repo{
+  border: 1px solid #000;
+  padding: 2% 2% 2% 6%;
+  margin: 4% 2% 4% 3%;
+}
+
+.apart{
+  border: 2px solid #e7e7e7;
+  border-radius: 5px;
+  padding: 4% 0% 4% 4%;
+  font-size: 1em;
+}
+
+.apart:hover{
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.Tform{
+  border-spacing: 20px 0px;
+  font-size: 1.2em;
+}
+
+.Tform input, .Tform select{
+  border-radius: 5px;
+  height: 30px;
+  width: 50%;
+}
+
+.fil{
+  font-size: 1.2em;
+  margin: 5%;
+  background-color: #ededed;
+  padding: 2%;
+  width: 60%;
+}
+
+.fil select, .fil input{
+  border-radius: 5px;
+  height: 30px;
+  width: 30%;
+}
+
+.repSel{
+  background-color: rgb(51,122,183);
+  color: #fff;
+  border-radius: 7px;
+  padding: 1.3%;
+}
+
+.repSel:hover{
+  cursor: pointer;
+}
+
+.repNoSel{
+  border-radius: 7px;
+  padding: 1.3%;
+  background-color: #fff;
+}
+
+.repNoSel:hover{
+  background-color: rgb(51,122,183);
+  color: #fff;
+  cursor: pointer;
+}
+
+.FAct{
+  display: block;
+}
+
+.FNoAct{
+  display: none;
+}
+
+.btnS{
+  background-color: rgb(91,184,92);
+  border: 2px solid rgb(91,184,92);
+  margin: 0% 2% 3% 3%;
+}
+
+.btnS:hover{
+  background-color: #fff;
+  color: rgb(91,184,92);
+  cursor: pointer;
+}
+
+.btnF{
+  background-color: #337ab7;
+  border: 2px solid #337ab7;
+  margin: 0% 2% 3% 3%;
+  width: 30%;
+}
+
+.btnF:hover{
+  background-color: #fff;
+  color: #337ab7;
+  cursor: pointer;
+}
+
+
+.btnC{
+  background-color: rgb(240,173,78);
+  border: 2px solid rgb(240,173,78);
+}
+
+.btnC:hover{
+  background-color: #fff;
+  color: rgb(240,173,78);
+  cursor: pointer;
+}
+
+.btnS, .btnC, .btnF{
+  color: #fff;
+  border-radius: 7px;
+  padding: 1% 2% 1% 2%;
+}
+
+.matRie{
+  border-collapse: collapse;
+  margin-top: 5%;
+}
+
+.matRie, .matRie td{
+  border: 1px solid #000;
+}
+
+.matRie td{
+  padding: 2%;
+}
+
+.reg{
+  border-collapse: collapse;
+  margin: 5% 0% 2% 2%;
+}
+
+.reg, .reg td, .reg th{
+  border: 1px solid #000;
+}
+
+.reg td{
+  padding: 1%;
+}
+
+.mrV{
+  color: green;
+}
+
+.mrA{
+  color: orange;
+}
+
+.mrR{
+  color: red;
+}
+
+.Low{
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+
+.Medium{
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+
+.Mayor{
+  color: #a94442;
+  background-color: #f2dede;
+}
+
+.mrR, .mrA, .mrV{
+  font-weight: bold;
+}
+
+.barMai{
+  color: #337ab7;
+  background-color:#f8f8f8;
+}
+
+/*Apartado para el grid*/
+
+.admin{
+  display: grid;
+  grid-template: auto / 20% 80%;
+  grid-template-areas: "opcs datos";
+}
+
+.opcs{
+  grid-area: opcs;
+  border: 1px solid #e7e7e7;
+  color: #337ab7;
+  background-color:#f8f8f8;
+}
+
+.datos{
+  grid-area: datos;
+}
+
+.panPrn{
+  display: grid;
+  grid-template: auto / repeat(4,25%);
+  grid-template-areas: "newRep MyRep GeoRep TBD";
+  /*grid-gap: 0% 0%;*/
+  margin: 2% 0% 5% 2%;
+}
+
+.newRep{
+  grid-area: newRep;
+  border: 1px solid #337ab7;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.MyRep{
+  grid-area: MyRep;
+  border: 1px solid #5cb85c;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.GeoRep{
+  grid-area: GeoRep;
+  border: 1px solid #f0ad4e;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.TBD{
+  grid-area: TBD;
+  border: 1px solid #d9534f;
+  border-radius: 5px;
+  width: 80%;
+}
+
+/* Estilos para el mapa */
+#map_div{
+        height: 360px;
+        width: 80%;
+        margin: 3% 0% 0% 3%;
+      }
+</style>
