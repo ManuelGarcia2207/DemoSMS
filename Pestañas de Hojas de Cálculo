@@ -1,0 +1,1089 @@
+// Usuario incorrecto (XUser)
+
+<center>
+<div class="fondoM">
+<div class="iyr">
+<form onSubmit="handleFormSubmit(this)">
+<p style="color: red;">Usuario y/o Contraseña incorrectos</p>
+<h3>Usuario</h3>
+<input type="text" name="user" class="is" required/><br><br>
+<h3>Contraseña</h3>
+<input type="password" class="is" name="pass" id="pass" required/><br><br>
+<input type="submit" class="btn" value="Entrar"/>
+<input type="hidden" name="type" id="type" value="entra"/>
+</form>
+</div>
+</div>
+</center>
+
+// Panel de usuario (Usuario)
+
+<div class="admin">
+
+<div class="opcs">
+
+<div class="apart" onclick="aux(),google.script.run.withSuccessHandler(oknuevas).gnuevas('DashboardUsr');">
+Dashboads
+</div>
+
+<div class="apart" onclick="aux(),regUsr();">
+Charts
+</div>
+
+<div class="apart" onclick="aux(),google.script.run.withSuccessHandler(oknuevas).gnuevas('Gráficas');">
+Tables
+</div>
+
+</div>
+
+<div class="datos" id="apps">
+
+<div class="panPrn">
+<div class="newRep">
+<div class="box-azul">
+<img src="https://docs.google.com/uc?id=1il8qgCDUU-lNCi2sL8FSua3HoUugM36c" width="40%">
+<p class="cur2">Working!</p>
+<h2 class="cur2" id="wrk">0</h2>
+</div>
+
+<div class="subB cur" onclick="aux(),google.script.run.withSuccessHandler(oknuevas3).gnuevas('NReporteUsr');">
+New Report
+</div>
+</div>
+
+<div class="MyRep">
+<div class="box-verde">
+<img src="https://docs.google.com/uc?id=17s5h7cVEStg4bwOXPFEEZyzArVf3cV4V" width="40%">
+<p class="cur2">Completed!</p>
+<h2 class="cur2" id="com">1</h2>
+</div>
+
+<div class="subG cur" onclick="aux(),regUsr();">
+My Reports
+</div>
+</div>
+
+<div class="GeoRep">
+<div class="box-amarillo">
+<img src="https://docs.google.com/uc?id=1gHgnQq20icUpGeKSeFTWdBZgtowxC7ZJ" width="40%">
+<p class="cur2">Opened!</p>
+<h2 class="cur2" id="opn">1</h2>
+</div>
+
+<div class="subY cur"  onclick="aux(),google.script.run.withSuccessHandler(oknuevas).gnuevas('RepGeoUsr');">
+Geographic Reports
+</div>
+</div>
+
+<div class="TBD">
+<div class="box-rojo">
+<img src="https://docs.google.com/uc?id=12mCSXGl7F8gJJRR5xBO3sM1jOF-LZ9lO" width="40%">
+<p class="cur2">Pending!</p>
+<h2 class="cur2" id="pnd">1</h2>
+</div>
+
+<div class="subR cur">
+TBD
+</div>
+</div>
+</div>
+
+<center>
+<iframe src="https://docs.google.com/spreadsheets/d/1vF-cmm1hr69qqPHeirW0a7uk-E4nCOgttk3e1yEkPhc/htmlembed/sheet?headers=false&gid=103996611" width="78%" height="480px">
+</iframe>
+</center>
+
+<div class="panPrn">
+<div class="newRep">
+<div class="box-azul">
+<center>
+<h2 class="cur2">ORG</h2>
+</center>
+</div>
+
+<div class="subB cur2" id="org">
+<center>12</center>
+</div>
+</div>
+
+<div class="MyRep">
+<div class="box-verde">
+<center>
+<h2 class="cur2">HUM</h2>
+</center>
+</div>
+
+<div class="subG cur2" id="hum">
+<center>10</center>
+</div>
+</div>
+
+<div class="GeoRep">
+<div class="box-amarillo">
+<center>
+<h2 class="cur2">TEC</h2>
+</center>
+</div>
+
+<div class="subY cur2" Id="tec">
+<center>13</center>
+</div>
+</div>
+
+<div class="TBD">
+<div class="box-rojo">
+<center>
+<h2 class="cur2">OTH</h2>
+</center>
+</div>
+
+<div class="subR cur2" id="oth">
+<center>16</center>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+// Nuevo usuario (NReporteUsr)
+
+<h1 class="repo">Hazard Register</h1>
+
+<div style="margin: 4% 2% 4% 3%;">
+<button class="repSel" id="sec[1]">Report Detail</button>
+</div>
+
+<form onSubmit="handleFormSubmit(this)">
+
+<div class="repo" id="qs">
+
+<div id="frm[1]" class="FAct">
+<center>
+<table class="Tform" width="90%">
+
+<tr>
+<td align="right" width="30%">
+<label for="idRep">Report ID</label>
+</td>
+
+<td align="left" width="70%">
+<input type="text" name="idRep" required/><br><br>
+</td>
+<tr>
+
+<tr>
+<td align="right">
+<label for="datRep">Date</label>
+</td>
+
+<td align="left">
+<input type="date" name="datRep" required/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="desc">Report Short Description</label>
+</td>
+
+<td align="left">
+<input type="text" name="desc" required/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>Functional Area</label>
+</td>
+
+<td align="left">
+<select name="area" required>
+<option value="">Select an option</option>
+<option value="FLt Ops">FLt Ops</option>
+<option value="Mx">Mx</option>
+</select><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="hazard">Hazard Identified</label>
+</td>
+
+<td align="left">
+<input type="text" name="hazard" required/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>Hazard Category</label>
+</td>
+
+<td align="left">
+<select name="Hcat" required>
+<option value="">Select an option</option>
+<option value="ORG">ORG</option>
+<option value="HUM">HUM</option>
+<option value="TEC">TEC</option>
+<option value="OTH">OTH</option>
+</select><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="conse">Potencial Consequence</label>
+</td>
+
+<td align="left">
+<input type="text" name="conse" required/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="fac">Contributing Factors</label>
+</td>
+
+<td align="left">
+<input type="text" name="fac" required/>
+</td>
+</tr>
+
+</table>
+</center>
+</div>
+
+</div>
+
+<input type="submit" class="btnS" value="Save"/>
+<button class="btnC" onclick="clr()">Cancel</button>
+
+<input type="hidden" id="user" name="user" value="Nom"/>
+<input type="hidden" id="type" name="type" value="registroUsr"/>
+</form>
+
+// Graficas de usuario (DashboardUsr)
+
+<div class="panPrn">
+<div class="newRep">
+<div class="box-azul">
+<img src="https://docs.google.com/uc?id=1il8qgCDUU-lNCi2sL8FSua3HoUugM36c" width="40%">
+<p class="cur2">Working!</p>
+<h2 class="cur2" id="wrk">0</h2>
+</div>
+
+<div class="subB cur" onclick="aux(),google.script.run.withSuccessHandler(oknuevas3).gnuevas('NReporteUsr');">
+New Report
+</div>
+</div>
+
+<div class="MyRep">
+<div class="box-verde">
+<img src="https://docs.google.com/uc?id=17s5h7cVEStg4bwOXPFEEZyzArVf3cV4V" width="40%">
+<p class="cur2">Completed!</p>
+<h2 class="cur2" id="com">1</h2>
+</div>
+
+<div class="subG cur" onclick="aux(),regUsr();">
+My Reports
+</div>
+</div>
+
+<div class="GeoRep">
+<div class="box-amarillo">
+<img src="https://docs.google.com/uc?id=1gHgnQq20icUpGeKSeFTWdBZgtowxC7ZJ" width="40%">
+<p class="cur2">Opened!</p>
+<h2 class="cur2" id="opn">1</h2>
+</div>
+
+<div class="subY cur" onclick="aux(),google.script.run.withSuccessHandler(oknuevas).gnuevas('RepGeoUsr');">
+Geographic Reports
+</div>
+</div>
+
+<div class="TBD">
+<div class="box-rojo">
+<img src="https://docs.google.com/uc?id=12mCSXGl7F8gJJRR5xBO3sM1jOF-LZ9lO" width="40%">
+<p class="cur2">Pending!</p>
+<h2 class="cur2" id="pnd">1</h2>
+</div>
+
+<div class="subR cur">
+TBD
+</div>
+</div>
+</div>
+
+<center>
+<iframe src="https://docs.google.com/spreadsheets/d/1vF-cmm1hr69qqPHeirW0a7uk-E4nCOgttk3e1yEkPhc/htmlembed/sheet?headers=false&gid=103996611" width="78%" height="480px">
+</iframe>
+</center>
+
+<div class="panPrn">
+<div class="newRep">
+<div class="box-azul">
+<center>
+<h2 class="cur2">ORG</h2>
+</center>
+</div>
+
+<div class="subB cur2" id="org">
+<center>12</center>
+</div>
+</div>
+
+<div class="MyRep">
+<div class="box-verde">
+<center>
+<h2 class="cur2">HUM</h2>
+</center>
+</div>
+
+<div class="subG cur2" id="hum">
+<center>10</center>
+</div>
+</div>
+
+<div class="GeoRep">
+<div class="box-amarillo">
+<center>
+<h2 class="cur2">TEC</h2>
+</center>
+</div>
+
+<div class="subY cur2" Id="tec">
+<center>13</center>
+</div>
+</div>
+
+<div class="TBD">
+<div class="box-rojo">
+<center>
+<h2 class="cur2">OTH</h2>
+</center>
+</div>
+
+<div class="subR cur2" id="oth">
+<center>16</center>
+</div>
+</div>
+</div>
+
+// Reporte geografico usuario (RepGeoUsr)
+<div id="map_div">
+<center>
+<button class="btn2" onclick="auxG('map_div'),cargaMapUsr();">Consultar</button>
+</center>
+</div>
+
+<div id="mydata">
+</div>
+
+
+
+// Panel de administrador (Administrador)
+
+<div class="admin">
+
+<div class="opcs">
+
+<div class="apart" onclick="aux(),google.script.run.withSuccessHandler(oknuevas).gnuevas('Dashboards');">
+Dashboads
+</div>
+
+<div class="apart" onclick="aux(),google.script.run.withSuccessHandler(oknuevas).tablaReg();">
+Charts
+</div>
+
+<div class="apart" onclick="aux(),google.script.run.withSuccessHandler(oknuevas).gnuevas('Gráficas');">
+Tables
+</div>
+
+</div>
+
+<div class="datos" id="apps">
+
+<div class="panPrn">
+<div class="newRep">
+<div class="box-azul">
+<img src="https://docs.google.com/uc?id=1il8qgCDUU-lNCi2sL8FSua3HoUugM36c" width="40%">
+<p class="cur2">Working!</p>
+<h2 class="cur2" id="wrk">0</h2>
+</div>
+
+<div class="subB cur" onclick="aux(),google.script.run.withSuccessHandler(oknuevas3).gnuevas('NReporte');">
+New Report
+</div>
+</div>
+
+<div class="MyRep">
+<div class="box-verde">
+<img src="https://docs.google.com/uc?id=17s5h7cVEStg4bwOXPFEEZyzArVf3cV4V" width="40%">
+<p class="cur2">Completed!</p>
+<h2 class="cur2" id="com">1</h2>
+</div>
+
+// Reporte nuevo de administrador (NReporte)
+
+<h1 class="repo">Hazard Register</h1>
+
+<div style="margin: 4% 2% 4% 3%;">
+<button class="repSel" id="sec[1]" onclick="selN(1)">Report Detail</button>
+<button class="repNoSel" id="sec[2]" onclick="selN(2)">Initial Analysis</button>
+<button class="repNoSel" id="sec[3]" onclick="selN(3)">Residual Analysis</button>
+</div>
+
+<form onSubmit="handleFormSubmit(this)">
+
+<div class="repo" id="qs">
+
+<div id="frm[1]" class="FAct">
+<center>
+<table class="Tform" width="90%">
+
+<tr>
+<td align="right" width="30%">
+<label for="idRep">Report ID</label>
+</td>
+
+<td align="left" width="70%">
+<input type="text" name="idRep" required/><br><br>
+</td>
+<tr>
+
+<tr>
+<td align="right">
+<label for="datRep">Date</label>
+</td>
+
+<td align="left">
+<input type="date" name="datRep" required/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="desc">Report Short Description</label>
+</td>
+
+<td align="left">
+<input type="text" name="desc" required/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>Functional Area</label>
+</td>
+
+<td align="left">
+<select name="area" required>
+<option value="">Select an option</option>
+<option value="FLt Ops">FLt Ops</option>
+<option value="Mx">Mx</option>
+</select><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="hazard">Hazard Identified</label>
+</td>
+
+<td align="left">
+<input type="text" name="hazard" required/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label>Hazard Category</label>
+</td>
+
+<td align="left">
+<select name="Hcat" required>
+<option value="">Select an option</option>
+<option value="ORG">ORG</option>
+<option value="HUM">HUM</option>
+<option value="TEC">TEC</option>
+<option value="OTH">OTH</option>
+</select><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="conse">Potencial Consequence</label>
+</td>
+
+<td align="left">
+<input type="text" name="conse" required/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="fac">Contributing Factors</label>
+</td>
+
+<td align="left">
+<input type="text" name="fac" required/>
+</td>
+</tr>
+
+</table>
+</center>
+</div>
+
+<div id="frm[2]" class="FNoAct">
+<center>
+<table class="Tform" width="90%">
+
+<tr>
+<td align="right" width="30%">
+<label for="iniSev">Initial Severity</label>
+</td>
+
+<td align="left" width="70%">
+<select name="iniSev">
+<option value="">Select an option</option>
+<option value="Low">Low</option>
+<option value="Medium">Medium</option>
+<option value="Mayor">Mayor</option>
+</select><br><br>
+</td>
+<tr>
+
+<tr>
+<td align="right">
+<label for="iniProb">Initial Probability</label>
+</td>
+
+<td align="left">
+<select name="iniProb">
+<option value="">Select an option</option>
+<option value="Remote">Remote</option>
+</select><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="iniRis">Initial Risk Rating</label>
+</td>
+
+<td align="left">
+<input type="number" name="iniRis" min="0" max="10"/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="alarp">Safety Committee Determination ALARP</label>
+</td>
+
+<td align="left">
+<input type="text" name="alarp"/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="control">Control Implemented</label>
+</td>
+
+<td align="left">
+<input type="text" name="control"/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="impDat">Implementation Date</label>
+</td>
+
+<td align="left">
+<input type="date" name="impDat"/><br><br>
+</td>
+</tr>
+
+</table>
+</center>
+</div>
+
+<div id="frm[3]" class="FNoAct">
+<center>
+<table class="Tform" width="90%">
+
+<tr>
+<td align="right" width="30%">
+<label for="resSevRA">Residual Severity</label>
+</td>
+
+<td align="left" width="70%">
+<select name="resSevRA">
+<option value="">Select an option</option>
+<option value="Mayor">Mayor</option>
+</select><br><br>
+</td>
+<tr>
+
+<tr>
+<td align="right">
+<label for="resProb">Residual Probability</label>
+</td>
+
+<td align="left">
+<select name="resProb">
+<option value="">Select an option</option>
+<option value="Improbable">Improbable</option>
+</select><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="resRR">Residual Risk Rating</label>
+</td>
+
+<td align="left">
+<input type="number" name="resRR" min="0" max="10"/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="SCRD">Safety Committe Review Date</label>
+</td>
+
+<td align="left">
+<input type="date" name="SCRD"/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="SCCEfe">Safety Committee Controls Effective?</label>
+</td>
+
+<td align="left">
+<input type="text" name="SCCEfe"/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="SCRL">Safety Committee Risk Level ALARP?</label>
+</td>
+
+<td align="left">
+<input type="text" name="SCRL"/><br><br>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<label for="AERevDat">AE Review Date</label>
+</td>
+
+<td align="left">
+<input type="date" name="AERevDat"/><br><br>
+</td>
+</tr>
+
+</table>
+</center>
+</div>
+
+
+</div>
+
+<input type="submit" class="btnS" value="Save"/> 
+<button class="btnC" onclick="clr()">Cancel</button>
+
+<input type="hidden" id="user" name="user" value="Nom"/>
+<input type="hidden" id="totS" name="totS" value="3"/>
+<input type="hidden" id="type" name="type" value="registro"/>
+</form>
+
+// Panel de Administrador (Dashboards)
+
+<div class="panPrn">
+<div class="newRep">
+<div class="box-azul">
+<img src="https://docs.google.com/uc?id=1il8qgCDUU-lNCi2sL8FSua3HoUugM36c" width="40%">
+<p class="cur2">Working!</p>
+<h2 class="cur2" id="wrk">0</h2>
+</div>
+
+<div class="subB cur" onclick="aux(),google.script.run.withSuccessHandler(oknuevas3).gnuevas('NReporte');">
+New Report
+</div>
+</div>
+
+<div class="MyRep">
+<div class="box-verde">
+<img src="https://docs.google.com/uc?id=17s5h7cVEStg4bwOXPFEEZyzArVf3cV4V" width="40%">
+<p class="cur2">Completed!</p>
+<h2 class="cur2" id="com">1</h2>
+</div>
+
+<div class="subG cur" onclick="aux(),google.script.run.withSuccessHandler(oknuevas).tablaReg();">
+My Reports
+</div>
+</div>
+
+<div class="GeoRep">
+<div class="box-amarillo">
+<img src="https://docs.google.com/uc?id=1gHgnQq20icUpGeKSeFTWdBZgtowxC7ZJ" width="40%">
+<p class="cur2">Opened!</p>
+<h2 class="cur2" id="opn">1</h2>
+</div>
+
+<div class="subY cur" onclick="aux(),google.script.run.withSuccessHandler(oknuevas).gnuevas('RepGeo');">
+Geographic Reports
+</div>
+</div>
+
+<div class="TBD">
+<div class="box-rojo">
+<img src="https://docs.google.com/uc?id=12mCSXGl7F8gJJRR5xBO3sM1jOF-LZ9lO" width="40%">
+<p class="cur2">Pending!</p>
+<h2 class="cur2" id="pnd">1</h2>
+</div>
+
+<div class="subR cur">
+TBD
+</div>
+</div>
+</div>
+
+<center>
+<iframe src="https://docs.google.com/spreadsheets/d/1vF-cmm1hr69qqPHeirW0a7uk-E4nCOgttk3e1yEkPhc/htmlembed/sheet?headers=false&gid=103996611" width="78%" height="480px">
+</iframe>
+</center>
+
+<div class="panPrn">
+<div class="newRep">
+<div class="box-azul">
+<center>
+<h2 class="cur2">ORG</h2>
+</center>
+</div>
+
+<div class="subB cur2" id="org">
+<center>12</center>
+</div>
+</div>
+
+<div class="MyRep">
+<div class="box-verde">
+<center>
+<h2 class="cur2">HUM</h2>
+</center>
+</div>
+
+<div class="subG cur2" id="hum">
+<center>10</center>
+</div>
+</div>
+
+<div class="GeoRep">
+<div class="box-amarillo">
+<center>
+<h2 class="cur2">TEC</h2>
+</center>
+</div>
+
+<div class="subY cur2" Id="tec">
+<center>13</center>
+</div>
+</div>
+
+<div class="TBD">
+<div class="box-rojo">
+<center>
+<h2 class="cur2">OTH</h2>
+</center>
+</div>
+
+<div class="subR cur2" id="oth">
+<center>16</center>
+</div>
+</div>
+</div>
+
+// Consultas del administrador (ConsultaS)
+
+<div id="reg">
+</div>
+
+// Reporte geográfico administrador (RepGeo)
+
+<div id="map_div">
+<center>
+<button class="btn2" onclick="auxG('map_div'),cargaMap();">Consultar</button>
+</center>
+</div>
+
+<div id="mydata">
+</div>
+
+// Graficas (Gráficas)
+
+<center>
+<table width="90%" class="matRie">
+<tr>
+
+<td rowspan="2" width="25%" align="center">
+Probabilidad de riesgo
+</td>
+
+<td colspan="5" align="center">
+Gravedad de riesgo
+</td>
+
+</tr>
+
+<tr align="center">
+
+<td width="15%">
+Catastrofico<br>
+A
+</td>
+
+<td width="15%">
+Peligroso<br>
+B
+</td>
+
+<td width="15%">
+Importante<br>
+C
+</td>
+
+<td width="15%">
+Leve<br>
+D
+</td>
+
+<td width="15%">
+Insignificante<br>
+E
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Frecuente 5
+</td>
+
+<td align="center" class="mrR">
+5A
+</td>
+
+<td align="center" class="mrR">
+5B
+</td>
+
+<td align="center" class="mrR">
+5C
+</td>
+
+<td align="center" class="mrA">
+5D
+</td>
+
+<td align="center" class="mrA">
+5E
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Ocasional 4
+</td>
+
+<td align="center" class="mrR">
+4A
+</td>
+
+<td align="center" class="mrR">
+4B
+</td>
+
+<td align="center" class="mrA">
+4C
+</td>
+
+<td align="center" class="mrA">
+4D
+</td>
+
+<td align="center" class="mrA">
+4E
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Remoto 3
+</td>
+
+<td align="center" class="mrR">
+3A
+</td>
+
+<td align="center" class="mrA">
+3B
+</td>
+
+<td align="center" class="mrA">
+3C
+</td>
+
+<td align="center" class="mrA">
+3D
+</td>
+
+<td align="center" class="mrV">
+3E
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Improbable 2
+</td>
+
+<td align="center" class="mrA">
+2A
+</td>
+
+<td align="center" class="mrA">
+2B
+</td>
+
+<td align="center" class="mrA">
+2C
+</td>
+
+<td align="center" class="mrV">
+2D
+</td>
+
+<td align="center" class="mrV">
+2E
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Sumamente Improbable 1
+</td>
+
+<td align="center" class="mrA">
+1A
+</td>
+
+<td align="center" class="mrV">
+1B
+</td>
+
+<td align="center" class="mrV">
+1C
+</td>
+
+<td align="center" class="mrV">
+1D
+</td>
+
+<td align="center" class="mrV">
+1E
+</td>
+
+</tr>
+</table>
+</center>
+
+<div>
+<center>
+<div class="fil">
+<label for="opcG">Hazard Category</label>
+<select id="opcG" name="opcG" onchange="filGra('graf1')" required>
+<option value="">Select an option</option>
+<option value="Field">Field</option>
+</select>
+</div>
+</center>
+
+<center>
+<div id="graf1">
+
+<iframe src="https://docs.google.com/spreadsheets/d/1vF-cmm1hr69qqPHeirW0a7uk-E4nCOgttk3e1yEkPhc/htmlembed/sheet?headers=false&gid=103996611" width="78%" height="480px">
+</iframe>
+
+</div>
+</center>
+
+</div>
+
+
+<div>
+<center>
+<div class="fil">
+<label for="feIni">Start</label>
+<input type="date" name="feIni" id="feIni"/><br><br>
+
+<label for="feFin">Finish</label>
+<input type="date" name="feFin" id="feFin"/><br><br>
+
+<button class="btnF" onclick="filGra('graf2')">Consultar</button>
+</div>
+</center>
+
+<center>
+<div id="graf2">
+
+<iframe src="https://docs.google.com/spreadsheets/d/1vF-cmm1hr69qqPHeirW0a7uk-E4nCOgttk3e1yEkPhc/htmlembed/sheet?headers=false&gid=103996611" width="78%" height="480px">
+</iframe>
+<br><br>
+
+</div>
+</center>
+
+</div>
+
+// Inicio (Inicio)
+
+<h1 class="loginM suave">Login</h1>
+
+<div class="fondoM">
+
+<div class="iyr">
+<form onSubmit="handleFormSubmit(this)">
+<h2 style="margin-top:2%;">Please Sign In</h2><br><br>
+<h4 class="login suave">Use a local account to log in.</h4><br><br>
+<h3 class="suave">Email</h3>
+<input type="text" name="user" class="is" required/><br><br>
+<h3 class="suave">Password</h3>
+<input type="password" class="is" name="pass" id="pass" required/><br><br>
+<input type="checkbox" name="recordar"/><label for="recordar" style="margin-left:2%;">Remember me?</label><br><br>
+<center><input type="submit" class="btn" value="Log in"/></center>
+<input type="hidden" name="type" id="type" value="entra"/>
+</form>
+</div>
