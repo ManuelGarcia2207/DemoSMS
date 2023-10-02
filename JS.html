@@ -1,0 +1,139 @@
+<script>
+//Función para cargar el mapa
+google.charts.load("upcoming", {packages:["map"]});
+
+//Función para evitar el submit y trabajar con los datos del formulario
+function preventFormSubmit() {
+  var forms = document.querySelectorAll('form');
+  for (var i = 0; i < forms.length; i++) {
+    forms[i].addEventListener('submit', function(event) {
+      event.preventDefault();
+    });
+  }
+//  google.script.run.withSuccessHandler(drawChart).consulta();
+}
+
+window.addEventListener('load', preventFormSubmit);
+
+
+function handleFormSubmit(formObject) {
+  var tp = document.getElementById('type').value;
+  if(tp == 'entra'){
+    document.getElementById('output').innerHTML = '<br><br><center><h1>Accediendo...</h1></center>';
+  }
+  
+  if(tp != 'entra'){
+  
+  if(tp == 'registro' || tp == 'registroUsr'){
+  document.getElementById('apps').innerHTML = '<center><h1>Enviando ...</h1></center>';
+  }
+  }
+    
+  
+  google.script.run.withSuccessHandler(okentra).entrar(formObject);
+}
+      
+function okentra(url) {
+  if(url[1] == 'entra'){
+    document.getElementById('output').innerHTML = url[0];
+    document.getElementById('names').innerHTML = url[2];
+  }
+  
+  if(url[1] != 'entra'){
+    document.getElementById('apps').innerHTML = url[0];
+  }
+  
+}
+
+function oknuevas(url) {
+  document.getElementById('apps').innerHTML = url[0];
+}
+
+function oknuevas2(url) {
+  document.getElementById('output').innerHTML = url[0];
+  document.getElementById('names').innerHTML = '';
+}
+
+function oknuevas3(url) {
+  var e1 = document.getElementById('myname').value;
+  document.getElementById('apps').innerHTML = url[0];
+  document.getElementById('user').value = e1;
+}
+
+function aux(){
+  document.getElementById('apps').innerHTML = '<center><br><br><h1>Espera...</h1></center>';
+}
+
+function auxG(div){
+  document.getElementById(div).innerHTML = '<center><br><br><h1>Espera...</h1></center>';
+}
+
+function clr(){
+  document.getElementById('apps').innerHTML = '';
+}
+
+/* Función para registros del usuario*/
+function regUsr(){
+  var e1 = document.getElementById('myname').value;
+  google.script.run.withSuccessHandler(oknuevas).tablaUsr(e1);
+}
+
+/*Función para habilitar y deshabilitar apartados New Report*/
+function selN(ind){
+  var cont = document.getElementById('totS').value;
+  
+  for(var i=1; i <= cont; i++){
+    document.getElementById('frm['+i+']').className = 'FNoAct';
+    document.getElementById('sec['+i+']').className = 'repNoSel';
+  }
+  
+  document.getElementById('frm['+ind+']').className = 'FAct';
+  document.getElementById('sec['+ind+']').className = 'repSel';
+}
+
+/*Funciones para apariencia de llamado de filtros*/
+function filGra(divLl){
+  document.getElementById(divLl).innerHTML = '<h2>Generando ...</h2>';
+  google.script.run.withSuccessHandler(oklasgraf).lasgraf(divLl);
+}
+
+function oklasgraf(url){
+  var e1 = url[39];
+  document.getElementById(e1).innerHTML = url[0];
+}
+
+/* Implementación del mapa */
+function cargaMap(){
+  google.script.run.withSuccessHandler(drawChart).consulta();
+}
+
+function drawChart(url) {
+  document.getElementById('mydata').innerHTML = url[0];
+  var data = new google.visualization.DataTable();
+  data.addColumn('number','latitude')
+  data.addColumn('number','longitude')
+  
+  for(var a=0;a<parseInt(document.getElementById('total').value);a++){
+    data.addRows([
+      [parseFloat(document.getElementById('lat['+a+']').value),
+      parseFloat(document.getElementById('lon['+a+']').value)]
+    ])
+  }
+  
+//  document.getElementById('output').innerHTML = '<center><h2>aaa</h2></center>';
+  
+  var map = new google.visualization.Map(document.getElementById('map_div'));
+  
+  map.draw(data, {
+    showTooltip: true,
+    showInfoWindow: true,
+    mapType: 'normal',
+    enableScrollWheel: true
+  });
+}
+
+function cargaMapUsr(){
+  var e1 = document.getElementById('myname').value;
+  google.script.run.withSuccessHandler(drawChart).consultaUsr(e1);
+}
+</script>
